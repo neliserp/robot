@@ -11,7 +11,7 @@ Suite Setup       Open Browser To Login Page
 Suite Teardown    Close Browser
 Test Setup        Go To Login Page
 Test Template     Login With Invalid Credentials Should Fail
-Resource          ../resource.robot
+Resource          ../../resource.robot
 
 *** Test Cases ***               USER NAME        PASSWORD
 Empty Password                   ${VALID USER}    ${EMPTY}
@@ -29,3 +29,4 @@ Login Should Have Failed
     Location Should Be    ${LOGIN URL}
     # Title Should Be    Error Page
     Page Should Contain    The password field is required.
+    Flash Message Should Contain    Error The given data was invalid.
